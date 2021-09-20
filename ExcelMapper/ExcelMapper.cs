@@ -459,6 +459,10 @@ namespace Ganss.Excel
                     foreach (var ci in columnInfos)
                     {
                         var cellValue = GetCellValue(cell, ci);
+                        if (cellValue is string)
+                        {
+                            cellValue = (cellValue as string).Trim();
+                        }
                         try
                         {
                             if (valueParser != null)
